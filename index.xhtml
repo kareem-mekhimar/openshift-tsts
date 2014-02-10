@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>index</title>
+        <h:outputStylesheet name="jquery-mobile-css.css" library="css" />
+        <h:outputScript name="jquery-2.1.0.js" library="jquery"/>
+        <h:outputScript name="jquery-mobile-min.js" library="jquery"/>
+    </h:head>
+    <h:body>
+        <h:outputScript name="test1.js" library="js"/>
+        <div data-role="page" id="win1">
+
+          <div data-role="header">
+            <h1>Welcome To My Homepage</h1>
+          </div>
+
+          <div data-role="content">
+            <p>I Am Now A Mobile Developer!!</p>
+            
+            <h:outputLink value="#win2">
+                go to page 2
+                <f:passThroughAttribute name="data-transition" value="slide" />
+                <f:passThroughAttribute name="data-direction" value="reverse"/>
+                <f:passThroughAttribute name="data-role" value="button" />
+                <f:passThroughAttribute name="data-inline" value="true" />
+            </h:outputLink>
+            <h:panelGroup id="m" layout="block" p:data-role="controlgroup" p:data-type="horizontal">
+                <c:forEach var="i" begin="1" end="5" varStatus="state">
+                    <h:commandButton value="b#{state.index}"/>
+                </c:forEach>
+            </h:panelGroup>
+          </div>
+
+          <div data-role="footer">
+            <h1>Footer Text</h1>
+          </div>
+
+        </div>        
+        <h:panelGroup layout="block" id="win2" p:data-theme="b" p:data-title="2ND PAGE">
+            <f:passThroughAttribute name="data-role" value="page" />
+            
+            <h:panelGroup id="d" layout="block" p:data-role="header">
+                <h:outputLink value="#win1" p:data-role="button" p:data-icon="home"/>
+                <h1>page two</h1>
+                <h:outputLink value="search" p:data-role="button" p:data-icon="search" />
+            </h:panelGroup>
+            <h:panelGroup id="d2" layout="block">
+                <f:passThroughAttribute name="data-role" value="content" />
+                <h1>page two content</h1>
+            </h:panelGroup>
+        </h:panelGroup>
+    </h:body>
+</html>
+

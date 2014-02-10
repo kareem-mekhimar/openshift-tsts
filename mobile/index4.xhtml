@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:koko="http://xmlns.jcp.org/jsf/composite/components">
+    <h:head>
+        <title>Facelet Title</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script> 
+        <style type="text/css">
+           
+        </style>
+        <script>
+            $(document).ready(function (){
+            
+               $("#form\\:pass").on("invalid",function (e){
+                   
+                   this.setCustomValidity("a7aaaaa") ;
+               });
+               
+            }) ;
+            
+        </script>
+    </h:head>
+    <h:body>
+     
+        <div data-role="page">
+            <div data-role="header">
+                <h1>forms tst</h1>
+            </div>
+            <div data-role="content">
+                <h:form id="form" p:data-transition="slide">
+                    <div data-role="fieldcontain"> 
+                       <h:outputLabel for="name" value="name : " />
+                       <h:inputText id="name" value="#{twoCDi.name}"/>
+                    
+                       <h:outputLabel for="pass" value="password : "/>
+                       <h:inputText id="pass" value="#{twoCDi.password}"/>
+                    
+                       <h:outputLabel for="area" value="comments : "/>
+                       <h:inputTextarea id="area" value="#{twoCDi.comments}" />
+                       
+                       <h:outputLabel for="flip" value="flip switch" />
+                       <h:selectOneListbox id="flip" value="#{twoCDi.full}" p:data-role="slider">
+                           <f:selectItem itemLabel="yes" itemValue="true" />
+                           <f:selectItem itemLabel="no" itemValue="false" />
+                       </h:selectOneListbox>
+                       
+                       <div data-role="fieldcontain">                                                 
+                         <h:outputLabel for="langs" value="select langs" />
+                         <h:selectManyMenu id="langs" value="#{twoCDi.hisLangs}" p:data-native-menu="false">
+                             <f:selectItems value="#{twoCDi.allLanguages}" />
+                         </h:selectManyMenu>
+                       </div>
+       
+                       <div data-role="fieldcontain">
+                           <h:outputLabel for="date" value="birth date" />
+                           <koko:datecomponent id="date" value="#{twoCDi.birthDate}" >
+                               <f:convertDateTime pattern="dd/MM/yyyy"/>
+                           </koko:datecomponent>
+                       </div>
+                       
+                       <div data-role="fieldcontain">
+                           <h:outputLabel for="favIDE" value="favourite ide :" />
+                           <div data-role="controlgroup" id="favIDE" data-type="vertical">
+                               <h:selectOneRadio  value="#{twoCDi.favIDE}" layout="pageDirection">
+                                   <f:selectItem itemValue="nt" itemLabel="Netbeans"/>
+                                   <f:selectItem itemValue="ns" itemLabel="Visual studio"/>
+                                   <f:selectItem itemValue="ec" itemLabel="Eclipse" />
+                               </h:selectOneRadio>                              
+                           </div>
+                       </div>
+                       
+                       <h:commandButton value="go" action="index5"/>
+                       
+                    </div>
+                </h:form>
+            </div>
+        </div>
+        
+        
+    </h:body>
+</html>
+

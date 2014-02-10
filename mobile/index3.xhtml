@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Facelet Title</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>  
+
+    </h:head>
+    <h:body>
+        <h:panelGroup id="p1" layout="block" p:data-role="page">
+            <h:panelGroup id="h" p:data-role="header" p:data-theme="a" layout="block">
+                <h1>header</h1>
+            </h:panelGroup>
+            <h:panelGroup id="s" layout="block" p:data-role="content">
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">Group 1</li>
+                    <li>one-1</li>
+                    <li>two-1</li>
+                    <li>three-1</li>
+                    <li>four-1</li>
+                    <li>five-1</li>
+                    <li data-role="list-divider">Group 2</li>
+                    <li>one-2</li>
+                    <li>two-2</li>
+                    <li>three-2</li>
+                    <li>four-2</li>
+                    <li>five-2</li>                    
+                </ul>
+                <br/>
+                <ul data-role="listview"> 
+                    <li data-icon="info"><h:outputLink value="#p2" p:data-transition ="slide">go to page 2</h:outputLink></li>
+                </ul>
+                <ul data-role="listview">
+                    <li><h:outputLink value="#">kimo</h:outputLink>
+                        <h:outputLink value="#p3" p:data-rel="dialog">edit</h:outputLink></li>
+                    <li><h:outputLink value="#">esraa</h:outputLink>
+                        <h:outputLink value="#p3" p:data-rel="dialog">edit</h:outputLink>
+                        <h:panelGroup styleClass="ui-li-aside">kareem loves esraa</h:panelGroup>
+                    </li>                    
+                </ul>
+            </h:panelGroup>
+        </h:panelGroup>
+        <div data-role="page" id="p2">
+            <div data-role="header" data-add-back-btn="true">
+                <h1>page two</h1>
+            </div>
+            <div data-role="content">
+                page two content
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">thrusday octuper</li>
+                    <li><h3>stephen weber</h3>
+                        <p>fuckin man</p></li>
+                    <li><h3>jquery team</h3>
+                        <p>nas wes5aa</p></li>
+                    <li data-role="list-divider">friday octuper</li>
+                    <li><h3>avery walken</h3>
+                        <p>ayel 5awal</p></li>
+                </ul>
+                <h:panelGroup id="dd" layout="block" p:data-role="collapsible">
+                    <h2>mail account</h2>
+                    <ul data-role="listview" data-filter="true" data-autodividers="true" data-filter-placeholder="choose"
+                        data-filter-reveal="true">
+                        <li>inbox<h:graphicImage library="imgs" name="diab4.png" /> <h:panelGroup styleClass="ui-li-count">70</h:panelGroup></li>
+                        <li>important <h:panelGroup styleClass="ui-li-count">8</h:panelGroup></li>
+                        <li>draft <h:panelGroup styleClass="ui-li-count">8</h:panelGroup></li>
+                        <li>sent <h:panelGroup styleClass="ui-li-count">80000</h:panelGroup></li>
+                    </ul>
+                </h:panelGroup>
+            </div>
+        </div>
+        <div id="p3" data-role="page">
+            <h:panelGroup id="d" layout="block" p:data-role="header">
+                <h1>edit</h1>
+            </h:panelGroup>
+            <h:panelGroup id="c" layout="block" p:data-role="content">
+                Edit here
+            </h:panelGroup>
+        </div>
+    </h:body>
+</html>
+

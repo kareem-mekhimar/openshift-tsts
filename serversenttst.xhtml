@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputScript name="jquery-2.1.0.js" library="jquery"/>
+    </h:head>
+    <h:body>
+        <script>
+            $(document).ready(function (){
+                   
+                var eventSource = new EventSource("/WebApplication6/ssetst");
+         
+                eventSource.onmessage = function(event) {
+         
+                    $("#div").append("<h4>"+event.data+"</h4>") ;    
+                };      
+            }) ;
+            
+        </script>
+        <h:panelGroup layout="block" id="div"/>
+    </h:body>
+</html>
+

@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Facelet Title</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>  
+
+<script>
+   $(document).ready(function (){
+      $.mobile.loading("show",{
+          
+          text:"asdsda",
+          textVisible:true,
+          html:"<h2>loading</h2>"
+      }); 
+   });
+</script>
+    </h:head>
+    <h:body>
+        <h:panelGroup id="win1" layout="block" p:data-role="page">
+            <h:panelGroup id="h" layout="block" p:data-role="header">
+                <h1>page one</h1>
+                <div id="d" data-role="navbar" > 
+                  <ul>  
+                      <li> <h:outputLink value="#" p:data-icon="home">home</h:outputLink></li>
+                      <li> <h:outputLink value="#" p:data-icon="search">contacts</h:outputLink></li>
+                      <li><h:outputLink value="#" p:data-icon="info">events</h:outputLink> </li>
+                      <li> <h:outputLink value="#" p:data-icon="grid">news</h:outputLink></li>
+                  </ul>
+                </div>
+            </h:panelGroup>
+            <h:panelGroup layout="block" p:data-role="content">
+                page 1 contents
+                <h:link outcome="index2" value="go to page 2" p:data-ajax="false"/>
+                <h:link fragment="win2" value="open dialog" />
+                <h:panelGroup id="d" layout="block" p:data-role="collapsible" p:data-collapsed="false" p:data-inset="true"
+                            p:data-collapsed-icon="arrow-r" p:data-expanded-icon="arrow-d" p:data-iconpos="right">
+                    <h2>amr photo</h2>
+                    <h:graphicImage name="diab4.png" library="imgs"/>
+                </h:panelGroup>
+            </h:panelGroup>
+            <div data-role="footer" data-id="fool" data-position="fixed">
+                <h:outputLink value="#win1" styleClass="ui-btn-active ui-state-persist">page one</h:outputLink>
+                <h:outputLink value="#win2">page two</h:outputLink>
+            </div>
+        </h:panelGroup>
+        <h:panelGroup id="win2" layout="block" p:data-role="page">
+            <h:panelGroup id="h2" layout="block" p:data-role="header">
+                <h:outputLink value="#win1"  p:data-theme="b"> back</h:outputLink>
+                <h:outputLink value="#" p:data-icon="search"> search</h:outputLink>
+                <h1>window 2</h1>
+            </h:panelGroup>
+            <h:panelGroup layout="block" p:data-role="content" >
+                COntent
+                <h:link value="back" />
+                <h:commandButton value="my button" p:data-inline="true" p:data-mini="true" p:data-icon="app-target"/>
+                <h:panelGroup id="we" layout="block" p:data-role="collapsible-set">
+                    <h2>accordion</h2>
+                    <h:panelGroup id="w1" layout="block" p:data-role="collapsible">
+                        <h4>t1</h4>
+                        <p>asdsadsadasddasdsadasdasdaddasdasdasd</p>
+                    </h:panelGroup>
+                    <h:panelGroup id="w2" layout="block" p:data-role="collapsible">
+                        <h4>t2</h4>
+                        <p>asdsadsadasddasdsadasdasdaddasdasdasd</p>
+                    </h:panelGroup>
+                    <h:panelGroup id="w3" layout="block" p:data-role="collapsible">
+                        <h4>t3</h4>
+                        <p>asdsadsadasddasdsadasdasdaddasdasdasd</p>
+                    </h:panelGroup>                    
+                </h:panelGroup>
+            </h:panelGroup>
+            <div data-role="footer" data-id="fool" data-position="fixed">
+                <h:outputLink value="#win1" >page one</h:outputLink>
+                <h:outputLink value="#win2" styleClass="ui-btn-active ui-state-persist"> page two</h:outputLink>
+            </div>           
+        </h:panelGroup>
+    </h:body>
+</html>
+

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite">
+  
+    <cc:interface>
+        <cc:attribute name="width" type="java.lang.Integer"/>
+        <cc:attribute name="height" type="java.lang.Integer"/> 
+    </cc:interface>
+    <cc:implementation>
+        
+        <canvas id="canvas" width="#{cc.attrs.width}" height="#{cc.attrs.height}" style="border: 1px solid"/>
+        
+    </cc:implementation>
+</html>
+
